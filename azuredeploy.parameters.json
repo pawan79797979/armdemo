@@ -1,0 +1,21 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "adminUsername": {
+      "value": "adminuser"
+    },
+"adminPassword": {
+    "reference": {
+        "keyVault": {
+        "id": "/subscriptions/a6a4a797-d99a-4c70-ba42-68b5dadbca42/resourceGroups/resourcegroup1/providers/Microsoft.KeyVault/vaults/evicorekeyvault1"
+        },
+        "secretName": "vmAdminPassword"
+    }
+    },
+
+    "remoteAllowedCIDR": {
+      "value": "0.0.0.0/0"
+    }
+  }
+}
